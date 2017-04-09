@@ -8,13 +8,17 @@
 
 body {
     margin-top: 100px;
-    background-color: #222;
+    background-color: #EBF0F3;
 }
 
 @media(min-width:768px) {
     body {
         margin-top: 50px;
     }
+}
+
+.fa-fw {
+    font-size: 16px;
 }
 
 #wrapper {
@@ -24,7 +28,7 @@ body {
 #page-wrapper {
     width: 100%;
     padding: 0;
-    background-color: #fff;
+    background-color: #EBF0F3;
 }
 
 .huge {
@@ -34,7 +38,7 @@ body {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 225px;
+        padding-left: 250px;
     }
 
     #page-wrapper {
@@ -113,29 +117,38 @@ ul.alert-dropdown {
 /* Side Navigation */
 
 @media(min-width:768px) {
+    .side-bar {
+        position: fixed;
+        top: 0;
+        left: 250px;
+        width: 250px;
+        margin-left: -250px;
+        border-right: 1px solid #EEE;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #FFF;
+        bottom: 0;
+        overflow-x: hidden;
+        padding: 10px 10px 40px;
+    }
+
     .side-nav {
         position: fixed;
-        top: 51px;
-        left: 225px;
-        width: 225px;
-        margin-left: -225px;
+        top: 130px;
+        left: 260px;
+        width: 230px;
+        margin-left: -250px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #222;
+        background-color: #FFF;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
     }
 
     .side-nav>li>a {
-        width: 225px;
-    }
-
-    .side-nav li a:hover,
-    .side-nav li a:focus {
-        outline: none;
-        background-color: #000 !important;
+        width: 230px;
     }
 }
 
@@ -224,4 +237,61 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+
+.navbar-inverse {
+    background-color: #FFF;
+    padding-left: 250px;
+    border-color: #EEE;
+}
+
+.navbar-inverse  .navbar-nav>li>a {
+    padding: 14px 0 14px 30px;
+    margin-bottom: 2px;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover {
+    color: #0E88EB;
+    border-radius: 4px;
+    background-color: #DEF2FF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
+    outline: none;
+    color: #0E88EB;
+    border-radius: 4px;
+    background-color: #DEF2FF !important;
+}
+
+.navbar-inverse .navbar-logo {
+    width: 114px;
+    height: 50px;
+    float: left;
+    margin-top: 35px;
+    margin-left: 58px;
+    background-image: url("../images/home/logo.jpg")
+}
+
+.navbar-right .navbar-info {
+    float: left;
+    height: 50px;
+    padding: 15px 15px 15px 0;
+    font-size: 14px;
+}
+
+.navbar-right .navbar-info:hover,
+.navbar-right .navbar-info:focus,
+.navbar-right .navbar-info:active {
+    text-decoration: none;
+}
+
+.navbar-right .question {
+    color: #EB2326;
+}
+
+.navbar-right .username {
+    color: #0E88EB;
 }
