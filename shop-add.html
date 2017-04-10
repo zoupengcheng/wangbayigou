@@ -46,13 +46,13 @@
                         <a class="navbar-logo" href="#"></a>
                     </div>
                     <ul class="nav navbar-nav side-nav">
-                        <li class="active">
+                        <li>
                             <a href="shop-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
                         </li>
                         <li>
                             <a href="shop-list.html"><i class="fa fa-fw fa-reorder"></i> 商品列表</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="shop-add.html"><i class="fa fa-fw fa-plus-circle"></i> 商品新建</a>
                         </li>
                         <li>
@@ -72,34 +72,76 @@
 
         <div id="page-wrapper">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    1.如需交易，请完成以下的认证。<br />
-                    2.网吧或商家类型选择后将不可更改，请根据您的身份谨慎选择认证入口。
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-custom">
-                            <div class="thumbnail">
-                                <img src="images/management/网吧认证.png" alt="...">
-                                <div class="caption">
-                                    <p class="title">我是网吧业主</p>
-                                    <p><a href="#" class="btn btn-primary btn-auth" role="button">网吧认证</a></p>
+                <!-- List group -->
+                <ul class="list-group form">
+                    <li class="list-group-item">
+                        <div>
+                            <div class="label">商户名称：</div>
+                            <div class="content">
+                                <input type="text" class="form-control" id="name" placeholder="AOC显示器">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item even">
+                        <div>
+                            <div class="label">商务价格：</div>
+                            <div class="content">
+                                <input type="text" class="form-control" id="price" placeholder="0.0 ¥">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <div class="label">商务类型：</div>
+                            <div class="content">
+                                <select class="form-control" id="type">
+                                    <option value="电脑主机">电脑主机</option>
+                                    <option value="电脑主机">电脑主机</option>
+                                    <option value="电脑主机">电脑主机</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item even">
+                        <div>
+                            <div class="label">商品首图：</div>
+                            <div class="content">
+                                <div class="user-image"><div class="upload">+</div></div>
+                                <div class="image-tip">
+                                    建议尺寸：500*500<br />
+                                    支持JPG，PNG，BMP，GIF，文件不超过2M
                                 </div>
                             </div>
                         </div>
-                        <div class="col-custom">
-                            <div class="thumbnail">
-                                <img src="images/management/商户认证.png" alt="...">
-                                <div class="caption">
-                                    <p class="title">我是供应商</p>
-                                    <p><a href="#" class="btn btn-primary btn-auth" role="button">商户认证</a></p>
-                                </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <div class="label">商品详情图：</div>
+                            <div class="content">
+                                <div class="user-image"><div class="upload">+</div></div>
+                                <div class="user-image"><div class="upload">+</div></div>
+                                <div class="user-image"><div class="upload">+</div></div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="list-group-item even">
+                        <div>
+                            <div class="label" style="position: relative; top: -35px;">商品描述：</div>
+                            <div class="content">
+                                <textarea id="description" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item even">
+                        <div>
+                            <div class="label"></div>
+                            <div class="content">
+                                <button type="button" class="btn btn-warning btn-action">保存</button>
+                                <button type="button" class="btn btn-primary btn-action">发布</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div class="footer" data-spy="affix" data-offset-bottom="10">
                 版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****

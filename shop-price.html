@@ -46,7 +46,7 @@
                         <a class="navbar-logo" href="#"></a>
                     </div>
                     <ul class="nav navbar-nav side-nav">
-                        <li class="active">
+                        <li>
                             <a href="shop-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
                         </li>
                         <li>
@@ -55,7 +55,7 @@
                         <li>
                             <a href="shop-add.html"><i class="fa fa-fw fa-plus-circle"></i> 商品新建</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="shop-price.html"><i class="fa fa-fw fa-dollar"></i> 我的报价</a>
                         </li>
                         <li>
@@ -72,34 +72,45 @@
 
         <div id="page-wrapper">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    1.如需交易，请完成以下的认证。<br />
-                    2.网吧或商家类型选择后将不可更改，请根据您的身份谨慎选择认证入口。
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-custom">
-                            <div class="thumbnail">
-                                <img src="images/management/网吧认证.png" alt="...">
-                                <div class="caption">
-                                    <p class="title">我是网吧业主</p>
-                                    <p><a href="#" class="btn btn-primary btn-auth" role="button">网吧认证</a></p>
-                                </div>
+                <!-- List group -->
+                <ul class="list-group form">
+                    <li class="list-group-item">
+                        <div>
+                            <div class="label" style="position: relative; top: -40px;">详情页：</div>
+                            <div class="content">
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 100px;">所在地：</span><span>所在地</span></div>
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 100px;">询价品类:</span><span>XX网吧要买</span><span style="display: inline-block; color: #EB2326; margin-left: 20px; cursor: pointer;">电脑硬件</span></div>
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 100px;">截止日期:</span><span>2017/03/01</span></div>
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 100px;">询价需求:</span><span>30台AOC超薄显示器，30台华硕主板</span></div>
                             </div>
                         </div>
-                        <div class="col-custom">
-                            <div class="thumbnail">
-                                <img src="images/management/商户认证.png" alt="...">
-                                <div class="caption">
-                                    <p class="title">我是供应商</p>
-                                    <p><a href="#" class="btn btn-primary btn-auth" role="button">商户认证</a></p>
-                                </div>
+                    </li>
+                    <li class="list-group-item even">
+                        <div>
+                            <div class="label">报价：</div>
+                            <div class="content">
+                                <input type="text" class="form-control" id="price" placeholder="0.0 元">
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <div class="label" style="position: relative; top: -35px;">备注：</div>
+                            <div class="content">
+                                <textarea id="description" class="form-control" placeholder="请输入您想对网吧业主说的话，增加客户联系您的 机会。"></textarea>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>
+                            <div class="label"></div>
+                            <div class="content">
+                                <button type="button" class="btn btn-warning btn-action">保存</button>
+                                <button type="button" class="btn btn-primary btn-action">发布</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div class="footer" data-spy="affix" data-offset-bottom="10">
                 版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****
