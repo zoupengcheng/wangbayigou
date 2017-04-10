@@ -9,6 +9,7 @@
 body {
     margin-top: 100px;
     background-color: #EBF0F3;
+    font-family: "Microsoft YaHei",Helvetica,Arial,sans-serif;
 }
 
 @media(min-width:768px) {
@@ -140,10 +141,9 @@ ul.alert-dropdown {
         margin-left: -250px;
         border: none;
         border-radius: 0;
-        overflow-y: auto;
+        overflow: hidden;
         background-color: #FFF;
         bottom: 0;
-        overflow-x: hidden;
         padding-bottom: 40px;
     }
 
@@ -282,9 +282,9 @@ ul.alert-dropdown {
     font-size: 14px;
 }
 
-.navbar-right .navbar-info:hover,
-.navbar-right .navbar-info:focus,
-.navbar-right .navbar-info:active {
+.navbar-right .navbar-info > a:hover,
+.navbar-right .navbar-info > a:focus,
+.navbar-right .navbar-info > a:active {
     text-decoration: none;
 }
 
@@ -294,4 +294,8 @@ ul.alert-dropdown {
 
 .navbar-right .username {
     color: #0E88EB;
+}
+
+.navbar-right .logout {
+    color: #FFC000;
 }
