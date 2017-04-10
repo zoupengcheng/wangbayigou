@@ -14,6 +14,9 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Bootstrap Table -->
+    <link href="js/plugins/table/bootstrap-table.css" rel="stylesheet" type="text/css">
+
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -71,35 +74,12 @@
         </nav>
 
         <div id="page-wrapper">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    1.如需交易，请完成以下的认证。<br />
-                    2.网吧或商家类型选择后将不可更改，请根据您的身份谨慎选择认证入口。
-                </div>
+            <div class="location-info">
+                <div class="left">上次登录地点：<a class="location" href="#">杭州市萧山区铭文街226号</a></div>
+                <div class="right">上次登录日期：<a class="loggin-time" href="#">2017/02/05</a></div>
             </div>
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-custom">
-                            <div class="thumbnail">
-                                <img src="images/management/网吧认证.png" alt="...">
-                                <div class="caption">
-                                    <p class="title">我是网吧业主</p>
-                                    <p><a href="#" class="btn btn-primary btn-auth" role="button">网吧认证</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-custom">
-                            <div class="thumbnail">
-                                <img src="images/management/商户认证.png" alt="...">
-                                <div class="caption">
-                                    <p class="title">我是供应商</p>
-                                    <p><a href="#" class="btn btn-primary btn-auth" role="button">商户认证</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <table id="table"></table>
             </div>
             <div class="footer" data-spy="affix" data-offset-bottom="20">
                 版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****
@@ -115,7 +95,74 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- Bootstrap Table -->
+    <script src="js/plugins/table/bootstrap-table.js"></script>
+    <script src="js/plugins/table/bootstrap-table-locale-all.js"></script>
+
     <!-- Custom JavaScript -->
     <script src="js/sb-admin.js"></script>
+
+    <script type="text/javascript">
+        $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
+
+        var datasouce = [{
+                'id': '234234', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '433534', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '54745', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '123', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '243', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '456', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '676', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '879', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '343', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '657', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '352', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }, {
+                'id': '658', 'thumbnail': 'xxx.png', 'name': 'name', 'type': 'type', 'price': 'price', 'time': 'time', 'status': 'status'
+            }]
+
+        $(function() {
+            $('#table').bootstrapTable({
+                data: datasouce,
+                pagination: true,
+                classes: 'table table-hover table-no-bordered',
+                columns: [{
+                    field: 'id',
+                    title: '编号'
+                }, {
+                    field: 'thumbnail',
+                    title: '商品首图'
+                }, {
+                    field: 'name',
+                    title: '名称'
+                }, {
+                    field: 'type',
+                    title: '类别'
+                }, {
+                    field: 'price',
+                    title: '价格'
+                }, {
+                    field: 'time',
+                    title: '上架时间'
+                }, {
+                    field: 'status',
+                    title: '状态'
+                }, {
+                    field: 'operation',
+                    title: '操作'
+                }]
+            });
+        });
+    </script>
 </body>
 </html>
