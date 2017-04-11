@@ -101,6 +101,51 @@
     </div>
     <!-- /#wrapper -->
 
+    <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel">
+        <div class="modal-dialog" role="document" style="width: 480px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">查看报价</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">详情页：</label>
+                            <div class="col-sm-8">
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 70px;">所在地：</span><span>所在地</span></div>
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 70px;">询价品类:</span><span>XX网吧要买</span><span style="display: inline-block; color: #EB2326; margin-left: 20px; cursor: pointer;">电脑硬件</span></div>
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 70px;">截止日期:</span><span>2017/03/01</span></div>
+                                <div style="line-height: 30px;"><span style="display: inline-block; width: 70px;">询价需求:</span><span>30台AOC超薄显示器，30台华硕主板</span></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">报价：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="price" placeholder="0.0 元">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">备注：</label>
+                            <div class="col-sm-8">
+                                <textarea id="description" class="form-control" placeholder="请输入您想对网吧业主说的话，增加客户联系您的 机会。"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary" style="padding: 6px 50px; margin-top: 10px;">知道了</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -115,6 +160,12 @@
     <script src="js/sb-admin.js"></script>
 
     <script type="text/javascript">
+        function showQuoteModal() {
+            $('#quoteModal').modal('show');
+
+            return false;
+        }
+
         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
 
         var datasouce = [{
@@ -166,7 +217,7 @@
                     formatter: function(value, record, index) {
                         return '<a class="table-operation" href="#">关注</a>' +
                                 '<a class="table-operation" href="#">报价</a>' +
-                                '<a class="table-operation" href="#">查看报价</a>'
+                                '<a class="table-operation" href="#" onclick="showQuoteModal()">查看报价</a>'
                     }
                 }]
             });

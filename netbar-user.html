@@ -96,7 +96,7 @@
                             <div class="label">网吧模式：</div>
                             <div class="content">
                                 <div style="display: inline-block; width: 300px;">60 台</div>
-                                <button class="btn btn-custom" style="background-color: #AE63E4;">修改</button>
+                                <button class="btn btn-custom" onclick="alert('没有设计稿！')" style="background-color: #AE63E4;">修改</button>
                             </div>
                         </div>
                     </li>
@@ -105,7 +105,7 @@
                             <div class="label">联系电话：</div>
                             <div class="content">
                                 <div style="display: inline-block; width: 300px;">15685243692</div>
-                                <button class="btn btn-custom" style="background-color: #0EBEFF;">修改</button>
+                                <button class="btn btn-custom" data-toggle="modal" data-target="#modifyMobileModal" style="background-color: #0EBEFF;">修改</button>
                             </div>
                         </div>
                     </li>
@@ -114,7 +114,7 @@
                             <div class="label">邮箱：</div>
                             <div class="content">
                                 <div style="display: inline-block; width: 300px;">3642154982@qq.com</div>
-                                <button class="btn btn-custom" style="background-color: #47CF73;">修改</button>
+                                <button class="btn btn-custom" onclick="alert('没有设计稿！')" style="background-color: #47CF73;">修改</button>
                             </div>
                         </div>
                     </li>
@@ -160,6 +160,126 @@
     </div>
     <!-- /#wrapper -->
 
+    <div class="modal fade" id="modifyQQModal" tabindex="-1" role="dialog" aria-labelledby="modifyQQModalLabel">
+        <div class="modal-dialog" role="document" style="width: 480px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">修改QQ号</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div style="padding-left: 30px; color: #0E88EB;">验证是否本人操作：</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">手机</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="请输入绑定手机号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">验证码</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入验证码" style="width: 175px; display: inline-block; margin-right: 10px;">
+                                <button type="submit" class="btn btn-primary" style="top: -2px; position: relative;">获取验证码</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">新QQ号</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入QQ号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary" style="padding: 6px 50px; margin-top: 10px;">完成</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modifyMobileModal" tabindex="-1" role="dialog" aria-labelledby="modifyMobileModalLabel">
+        <div class="modal-dialog" role="document" style="width: 480px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">修改手机号码</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">旧手机</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="请输入绑定手机号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">验证码</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入验证码" style="width: 175px; display: inline-block; margin-right: 10px;">
+                                <button type="submit" class="btn btn-primary" style="top: -2px; position: relative;">获取验证码</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button type="button" class="btn btn-primary" onclick="showNewMobileModal()" style="padding: 6px 50px; margin-top: 10px;">下一步</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modifyMobileModalNew" tabindex="-1" role="dialog" aria-labelledby="modifyMobileModalNewLabel">
+        <div class="modal-dialog" role="document" style="width: 480px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">验证新手机</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">新手机</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="请输入绑定手机号码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">验证码</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入验证码" style="width: 175px; display: inline-block; margin-right: 10px;">
+                                <button type="submit" class="btn btn-primary" style="top: -2px; position: relative;">获取验证码</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary" style="padding: 6px 50px; margin-top: 10px;">完成</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -168,5 +288,16 @@
 
     <!-- Custom JavaScript -->
     <script src="js/sb-admin.js"></script>
+
+    <script type="text/javascript">
+        function showNewMobileModal() {
+            $('#modifyMobileModal').modal('hide');
+            $('#modifyMobileModalNew').modal('show');
+
+            return false;
+        }
+
+        $(function() {});
+    </script>
 </body>
 </html>

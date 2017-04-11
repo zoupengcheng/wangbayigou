@@ -98,6 +98,63 @@
     </div>
     <!-- /#wrapper -->
 
+    <div class="modal fade" id="timeModal" tabindex="-1" role="dialog" aria-labelledby="timeModalLabel">
+        <div class="modal-dialog" role="document" style="width: 480px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">修改截止日期</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">截止日期：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="type" style="display: inline-block; width: 100px; margin-right: 10px;">
+                                    <option value="2017">2017</option>
+                                </select>
+                                <select class="form-control" id="type" style="width: 80px; display: inline-block; margin-right: 10px;">
+                                    <option value="01">01</option>
+                                </select>
+                                <select class="form-control" id="type" style="width: 80px; display: inline-block;">
+                                    <option value="01">01</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button type="button" class="btn btn-default" style="padding: 6px 30px; margin-top: 10px; margin-right: 20px;" data-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-primary" style="padding: 6px 30px; margin-top: 10px;">确定</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel">
+        <div class="modal-dialog" role="document" style="width: 680px;">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">查看报价</h4>
+                </div> -->
+                <div class="modal-body" style="padding: 0; width: 680px;">
+                    <table id="quoteTable"></table>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -112,6 +169,61 @@
     <script src="js/sb-admin.js"></script>
 
     <script type="text/javascript">
+        function contact() {
+            alert('联系商户！')
+        }
+
+        function showTimeModal() {
+            $('#timeModal').modal('show');
+
+            return false;
+        }
+
+        function showQuoteModal() {
+            $('#quoteModal').modal('show');
+
+            var datasouce = [{
+                    'id': '234234', 'price': '50000', 'remark': '显示器可以在优惠，主 机要40台页可以在少一 点，请尽快联系我', 'name': '小兔出走电脑公司', 'mobile': '15624598512'
+                }, {
+                    'id': '433534', 'price': '50000', 'remark': '显示器可以在优惠，主 机要40台页可以在少一 点，请尽快联系我', 'name': '小兔出走电脑公司', 'mobile': '15624598512'
+                }, {
+                    'id': '54745', 'price': '50000', 'remark': '显示器可以在优惠，主 机要40台页可以在少一 点，请尽快联系我', 'name': '小兔出走电脑公司', 'mobile': '15624598512'
+                }, {
+                    'id': '123', 'price': '50000', 'remark': '显示器可以在优惠，主 机要40台页可以在少一 点，请尽快联系我', 'name': '小兔出走电脑公司', 'mobile': '15624598512'
+                }]
+
+            $('#quoteTable').bootstrapTable({
+                data: datasouce,
+                pagination: false,
+                classes: 'table table-hover table-no-bordered',
+                columns: [{
+                    field: 'id',
+                    title: '编号'
+                }, {
+                    field: 'price',
+                    title: '报价',
+                    formatter: function(value, record, index) {
+                        return '<span style="color: #EB2326; font-size: 16px;">' + value + ' 元</span>'
+                    }
+                }, {
+                    field: 'remark',
+                    title: '商户备注',
+                    width: '30%'
+                }, {
+                    field: 'information',
+                    title: '商户信息',
+                    width: '30%',
+                    formatter: function(value, record, index) {
+                        return '<div>名称：' + record.name + '</div>' +
+                                '<div>电话：' + record.mobile + '</div>' +
+                                '<img src="images/management/05.png" alt="..." style="cursor: pointer;" onclick="contact()" />'
+                    }
+                }]
+            });
+
+            return false;
+        }
+
         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
 
         var datasouce = [{
@@ -148,7 +260,7 @@
                     field: 'end_time',
                     title: '截止日期',
                     formatter: function(value, record, index) {
-                        return value + ' <a href="#"><i class="fa fa-fw fa-pencil"></i></a>'
+                        return value + ' <a href="#" onclick="showTimeModal()"><i class="fa fa-fw fa-pencil"></i></a>'
                     },
                 }, {
                     field: 'request',
@@ -174,7 +286,7 @@
                     field: 'operation',
                     title: '操作',
                     formatter: function(value, record, index) {
-                        return '<a class="table-operation" href="#">查看报价</a>' +
+                        return '<a class="table-operation" href="#" onclick="showQuoteModal()">查看报价</a>' +
                                 '<a class="table-operation" href="#">删除</a>'
                     }
                 }]
