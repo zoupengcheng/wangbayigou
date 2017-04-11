@@ -5,10 +5,15 @@
  */
 
 /* Global Styles */
+html {
+    position: relative;
+    min-height: 100%;
+}
 
 body {
     min-width: 900px;
     margin-top: 50px;
+    margin-bottom: 50px;
     background-color: #EBF0F3;
     font-family: "Microsoft YaHei",Helvetica,Arial,sans-serif;
 }
@@ -509,7 +514,11 @@ ul.alert-dropdown {
     color: #666666;
     font-size: 12px;
     text-align: center;
-    margin-top: 10px;
+    width: 100%;
+    position: absolute;
+    line-height: 50px;
+    height: 50px;
+    bottom: 0;
 }
 
 .location-info {
