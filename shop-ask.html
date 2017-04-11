@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>商户后台 -- 询价列表</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,32 +43,30 @@
                 <div class="navbar-info"><a class="logout" href="#"><i class="fa fa-fw fa-power-off"></i></a></div>
             </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <div class="nav navbar-nav side-bar">
-                    <div class="navbar-header">
-                        <a class="navbar-logo" href="#"></a>
-                    </div>
-                    <ul class="nav navbar-nav side-nav">
-                        <li>
-                            <a href="shop-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
-                        </li>
-                        <li>
-                            <a href="shop-list.html"><i class="fa fa-fw fa-reorder"></i> 商品列表</a>
-                        </li>
-                        <li>
-                            <a href="shop-add.html"><i class="fa fa-fw fa-plus-circle"></i> 商品新建</a>
-                        </li>
-                        <li>
-                            <a href="shop-price.html"><i class="fa fa-fw fa-dollar"></i> 我的报价</a>
-                        </li>
-                        <li>
-                            <a href="shop-ask.html"><i class="fa fa-fw fa-th-large"></i> 询价列表</a>
-                        </li>
-                        <li class="active">
-                            <a href="shop-pwd.html"><i class="fa fa-fw fa-key"></i> 修改密码</a>
-                        </li>
-                    </ul>
+            <div class="nav navbar-nav side-bar">
+                <div class="navbar-header">
+                    <a class="navbar-logo" href="#"></a>
                 </div>
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="shop-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
+                    </li>
+                    <li>
+                        <a href="shop-list.html"><i class="fa fa-fw fa-reorder"></i> 商品列表</a>
+                    </li>
+                    <li>
+                        <a href="shop-add.html"><i class="fa fa-fw fa-plus-circle"></i> 商品新建</a>
+                    </li>
+                    <li>
+                        <a href="shop-price.html"><i class="fa fa-fw fa-dollar"></i> 我的报价</a>
+                    </li>
+                    <li class="active">
+                        <a href="shop-ask.html"><i class="fa fa-fw fa-th-large"></i> 询价列表</a>
+                    </li>
+                    <li>
+                        <a href="shop-pwd.html"><i class="fa fa-fw fa-key"></i> 修改密码</a>
+                    </li>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
@@ -120,13 +118,13 @@
         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
 
         var datasouce = [{
-                'id': '234234', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '234234', 'location': '深圳市宝安区西乡大道壹中心B座', 'type': '显示器（一体机）', 'price_quoted': '10', 'end_time': '2017-03-27', 'request': '高性能处理器+入门性能显卡：i5-6300HQ+GT9 00系列，i7-4210MQ+GT900系列', 'operation': ''
             }, {
-                'id': '433534', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '433534', 'location': '深圳市宝安区西乡大道壹中心B座', 'type': '电脑主机', 'price_quoted': '10', 'end_time': '2017-03-27', 'request': '高性能处理器+入门性能显卡：i5-6300HQ+GT9 00系列，i7-4210MQ+GT900系列', 'operation': ''
             }, {
-                'id': '54745', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '54745', 'location': '深圳市宝安区西乡大道壹中心B座', 'type': '电脑主机', 'price_quoted': '10', 'end_time': '2017-03-27', 'request': '高性能处理器+入门性能显卡：i5-6300HQ+GT9 00系列，i7-4210MQ+GT900系列', 'operation': ''
             }, {
-                'id': '123', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '123', 'location': '深圳市宝安区西乡大道壹中心B座', 'type': '显示器（一体机）', 'price_quoted': '10', 'end_time': '2017-03-27', 'request': '高性能处理器+入门性能显卡：i5-6300HQ+GT9 00系列，i7-4210MQ+GT900系列', 'operation': ''
             }]
 
         $(function() {
@@ -136,38 +134,39 @@
                 classes: 'table table-hover table-no-bordered',
                 columns: [{
                     field: 'id',
-                    title: '编号'
-                }, {
-                    field: 'thumbnail',
-                    title: '商品首图',
-                    formatter: function(value, record, index) {
-                        return '<div class="user-image"><img src="' + value + '" alt="..."></div>'
-                    }
-                }, {
-                    field: 'name',
-                    title: '名称'
+                    title: '编号',
+                    visible: false
                 }, {
                     field: 'type',
-                    title: '类别'
-                }, {
-                    field: 'price',
-                    title: '价格',
+                    title: '品类',
                     formatter: function(value, record, index) {
-                        return '<span style="color: #EB2326; font-size: 16px;">¥ ' + value + '</span>'
+                        return '我要买 <a href="#" style="color: #EB2326; font-size: 16px;">' + value + '</a>'
+                    },
+                    width: '15%'
+                }, {
+                    field: 'location',
+                    title: '所在的',
+                    width: '15%'
+                }, {
+                    field: 'end_time',
+                    title: '截止日期'
+                }, {
+                    field: 'request',
+                    title: '需求',
+                    width: '25%'
+                }, {
+                    field: 'price_quoted',
+                    title: '报价人数',
+                    formatter: function(value, record, index) {
+                        return '<span style="color: #EB2326; font-size: 16px;">' + value + ' 人</span>'
                     }
-                }, {
-                    field: 'time',
-                    title: '上架时间'
-                }, {
-                    field: 'status',
-                    title: '状态'
                 }, {
                     field: 'operation',
                     title: '操作',
                     formatter: function(value, record, index) {
-                        return '<a class="table-operation" href="#">编辑</a>' +
-                                '<a class="table-operation" href="#">下架</a>' +
-                                '<a class="table-operation" href="#">刪除</a>'
+                        return '<a class="table-operation" href="#">关注</a>' +
+                                '<a class="table-operation" href="#">报价</a>' +
+                                '<a class="table-operation" href="#">查看报价</a>'
                     }
                 }]
             });

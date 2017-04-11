@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>网吧后台 -- 个人中心</title>
+    <title>网吧后台 -- 修改密码</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
                     <a class="navbar-logo" href="#"></a>
                 </div>
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="netbar-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
                     </li>
                     <li>
@@ -57,7 +57,7 @@
                     <li>
                         <a href="netbar-ask.html"><i class="fa fa-fw fa-dollar"></i> 我的询价</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="netbar-pwd.html"><i class="fa fa-fw fa-key"></i> 修改密码</a>
                     </li>
                 </ul>
@@ -66,91 +66,42 @@
         </nav>
 
         <div id="page-wrapper">
-            <div class="location-info">
-                <div class="left">上次登录地点：<a class="location" href="#">杭州市萧山区铭文街226号</a></div>
-                <div class="right">上次登录日期：<a class="loggin-time" href="#">2017/02/05</a></div>
-            </div>
             <div class="panel panel-default">
                 <!-- List group -->
-                <ul class="list-group">
+                <ul class="list-group form">
                     <li class="list-group-item">
                         <div>
-                            <div class="label">网吧名称：</div>
-                            <div class="content">皮城网咖</div>
-                        </div>
-                    </li>
-                    <li class="list-group-item even">
-                        <div>
-                            <div class="label">网吧地址：</div>
-                            <div class="content">杭州市余杭区凤飞路168号</div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div>
-                            <div class="label">网吧法人：</div>
-                            <div class="content">黄盖</div>
-                        </div>
-                    </li>
-                    <li class="list-group-item even">
-                        <div>
-                            <div class="label">网吧模式：</div>
+                            <div class="label">旧密码：</div>
                             <div class="content">
-                                <div style="display: inline-block; width: 300px;">60 台</div>
-                                <button class="btn btn-custom" style="background-color: #AE63E4;">修改</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div>
-                            <div class="label">联系电话：</div>
-                            <div class="content">
-                                <div style="display: inline-block; width: 300px;">15685243692</div>
-                                <button class="btn btn-custom" style="background-color: #0EBEFF;">修改</button>
+                                <input type="text" class="form-control" id="price" placeholder="手机/邮箱">
                             </div>
                         </div>
                     </li>
                     <li class="list-group-item even">
                         <div>
-                            <div class="label">邮箱：</div>
+                            <div class="label">新密码：</div>
                             <div class="content">
-                                <div style="display: inline-block; width: 300px;">3642154982@qq.com</div>
-                                <button class="btn btn-custom" style="background-color: #47CF73;">修改</button>
+                                <input type="password" class="form-control" id="price" placeholder="新密码">
                             </div>
                         </div>
                     </li>
                     <li class="list-group-item">
                         <div>
-                            <div class="label">法人身份证：</div>
+                            <div class="label">确认新密码：</div>
                             <div class="content">
-                                <div class="user-image"><img src="images/management/bg.png" alt="..."></div>
-                                <div class="user-image"><img src="images/management/bg.png" alt="..."></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item even">
-                        <div>
-                            <div class="label">网吧营业执照：</div>
-                            <div class="content">
-                                <div class="user-image"><img src="images/management/bg.png" alt="..."></div>
+                                <input type="password" class="form-control" id="price" placeholder="确认新密码">
                             </div>
                         </div>
                     </li>
                     <li class="list-group-item">
                         <div>
-                            <div class="label">网吧文化经营许可证：</div>
+                            <div class="label"></div>
                             <div class="content">
-                                <div class="user-image"><img src="images/management/bg.png" alt="..."></div>
+                                <button type="button" class="btn btn-primary btn-action" style="width: 320px;">确定</button>
                             </div>
                         </div>
                     </li>
                 </ul>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-body" style="margin-left: 15px; font-size: 12px;">
-                    <span style="color: #F87D7F;">需要修改其它信息请联系客服: </span><br />
-                    <a href="#">QQ:361256458</a><br />
-                    <a href="#">400:5620-1654</a><br />
-                </div>
             </div>
             <div class="footer" data-spy="affix" data-offset-bottom="10">
                 版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****

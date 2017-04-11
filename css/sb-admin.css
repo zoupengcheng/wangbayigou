@@ -46,6 +46,18 @@ a.table-operation {
     margin-bottom: 20px;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #0E88EB;
+    border-color: #0E88EB;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #FF7900;
+    border-color: #FF7900;
+}
+
 .content .btn-custom:hover,
 .content .btn-custom:focus,
 .content .btn-custom:active {
@@ -424,7 +436,7 @@ ul.alert-dropdown {
 }
 
 .panel-default .list-group-item .user-image .upload {
-    border: 1px dashed #DDD;
+    border: 1px dashed #BBB;
     text-align: center;
     height: 60px;
     line-height: 60px;
@@ -525,7 +537,7 @@ ul.alert-dropdown {
 .bootstrap-table .table.table-no-bordered > tbody > tr > td {
     height: 100px;
     padding-left: 30px;
-    line-height: 100px;
+    vertical-align: middle;
 }
 
 .bootstrap-table .table.table-no-bordered > thead > tr > th {
@@ -541,6 +553,34 @@ ul.alert-dropdown {
     background-color: #F8FBFC;
 }
 
+.bootstrap-table .table.table-no-even tbody > tr:nth-child(even) {
+    background-color: #FFF;
+}
+
 .bootstrap-table .pagination-detail {
     display: none;
+}
+
+.bootstrap-table .table.table-no-even .user-image {
+    display: table;
+    content: " ";
+}
+
+.bootstrap-table .table.table-no-even .user-image > img {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.bootstrap-table .table.table-no-even .user-image > div {
+    display: inline-block;
+    height: 100px;
+    width: 400px;
+}
+
+.bootstrap-table .table.table-no-even .user-image > div .title {
+    color: #1F6CBC;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 8px;
 }

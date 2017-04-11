@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>商户后台 -- 商品列表</title>
+    <title>网吧后台 -- 商品收藏</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <!-- Top Menu Items -->
             <div class="nav navbar-right top-nav">
                 <div class="navbar-info"><a class="question" href="#">常见问题？</a></div>
-                <div class="navbar-info">商户：<a class="username" href="#">15867896789</a></div>
+                <div class="navbar-info">网吧：<a class="username" href="#">15867896789</a></div>
                 <div class="navbar-info"><a class="logout" href="#"><i class="fa fa-fw fa-power-off"></i></a></div>
             </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -49,22 +49,19 @@
                 </div>
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="shop-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
+                        <a href="netbar-user.html"><i class="fa fa-fw fa-user"></i> 个人中心</a>
                     </li>
                     <li class="active">
-                        <a href="shop-list.html"><i class="fa fa-fw fa-reorder"></i> 商品列表</a>
+                        <a href="netbar-collection.html"><i class="fa fa-fw fa-star"></i> 商品收藏</a>
                     </li>
                     <li>
-                        <a href="shop-add.html"><i class="fa fa-fw fa-plus-circle"></i> 商品新建</a>
+                        <a href="netbar-add.html"><i class="fa fa-fw fa-plus-circle"></i> 新建询价单</a>
                     </li>
                     <li>
-                        <a href="shop-price.html"><i class="fa fa-fw fa-dollar"></i> 我的报价</a>
+                        <a href="netbar-ask.html"><i class="fa fa-fw fa-dollar"></i> 我的询价</a>
                     </li>
                     <li>
-                        <a href="shop-ask.html"><i class="fa fa-fw fa-th-large"></i> 询价列表</a>
-                    </li>
-                    <li>
-                        <a href="shop-pwd.html"><i class="fa fa-fw fa-key"></i> 修改密码</a>
+                        <a href="netbar-pwd.html"><i class="fa fa-fw fa-key"></i> 修改密码</a>
                     </li>
                 </ul>
             </div>
@@ -118,54 +115,43 @@
         $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-CN']);
 
         var datasouce = [{
-                'id': '234234', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '234234', 'thumbnail': 'images/home/images/图层-45.jpg', 'name': '商户名称', 'title': '戴尔(DELL)Vostro 3800-R63N8台式电脑主机(i3-4170 4G 500G DVD ）', 'price': '4800', 'operation': ''
             }, {
-                'id': '433534', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '433534', 'thumbnail': 'images/home/images/图层-45.jpg', 'name': '商户名称', 'title': '戴尔(DELL)Vostro 3800-R63N8台式电脑主机(i3-4170 4G 500G DVD ）', 'price': '4800', 'operation': ''
             }, {
-                'id': '54745', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '54745', 'thumbnail': 'images/home/images/图层-45.jpg', 'name': '商户名称', 'title': '戴尔(DELL)Vostro 3800-R63N8台式电脑主机(i3-4170 4G 500G DVD ）', 'price': '4800', 'operation': ''
             }, {
-                'id': '123', 'thumbnail': 'images/management/bg.png', 'name': 'AOC曲屏显示器', 'type': '显示器（一体机）', 'price': '4800', 'time': '2017-03-27', 'status': '上架中', 'operation': ''
+                'id': '123', 'thumbnail': 'images/home/images/图层-45.jpg', 'name': '商户名称', 'title': '戴尔(DELL)Vostro 3800-R63N8台式电脑主机(i3-4170 4G 500G DVD ）', 'price': '4800', 'operation': ''
             }]
 
         $(function() {
             $('#table').bootstrapTable({
                 data: datasouce,
                 pagination: true,
-                classes: 'table table-hover table-no-bordered',
+                showHeader: false,
+                classes: 'table table-hover table-no-bordered table-no-even',
                 columns: [{
                     field: 'id',
-                    title: '编号'
+                    title: '编号',
+                    visible: false
                 }, {
                     field: 'thumbnail',
                     title: '商品首图',
                     formatter: function(value, record, index) {
-                        return '<div class="user-image"><img src="' + value + '" alt="..."></div>'
+                        return '<div class="user-image">' +
+                                    '<img src="' + record.thumbnail + '" alt="...">' +
+                                    '<div>' +
+                                        '<div class="title">' + record.title + '</div>' +
+                                        '<div class="name">' + record.name + '</div>' +
+                                        '<a class="table-operation" href="#">删除</a>' +
+                                    '</div>' +
+                                '</div>'
                     }
-                }, {
-                    field: 'name',
-                    title: '名称'
-                }, {
-                    field: 'type',
-                    title: '类别'
                 }, {
                     field: 'price',
                     title: '价格',
                     formatter: function(value, record, index) {
                         return '<span style="color: #EB2326; font-size: 16px;">¥ ' + value + '</span>'
-                    }
-                }, {
-                    field: 'time',
-                    title: '上架时间'
-                }, {
-                    field: 'status',
-                    title: '状态'
-                }, {
-                    field: 'operation',
-                    title: '操作',
-                    formatter: function(value, record, index) {
-                        return '<a class="table-operation" href="#">编辑</a>' +
-                                '<a class="table-operation" href="#">下架</a>' +
-                                '<a class="table-operation" href="#">刪除</a>'
                     }
                 }]
             });
