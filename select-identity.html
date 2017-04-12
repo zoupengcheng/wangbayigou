@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>网吧易购 -- 选择身份</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        body {
+            background-color: #F5F5F5;
+            margin-top: 0;
+        }
+
+        .container {
+            width: 970px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #FFF;
+            border-bottom: 2px solid #0F88EB;
+        }
+
+        .navbar-logo {
+            margin: 20px 20px 20px 0;
+        }
+
+        .identity-box-warp {
+            width: 500px;
+            border-radius: 4px;
+            border: 1px solid #EEE;
+            background-color: #fff;
+            margin: 80px auto 20px;
+        }
+
+        .form-horizontal .form-group {
+            text-align: center;
+            margin: 0 0 15px 0;
+        }
+
+        .col-sm-12 {
+            width: 360px;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .form-title {
+            font-size: 30px;
+            color: #222222;
+            text-align: center;
+            margin: 50px 0 20px 0;
+            line-height: 30px;
+        }
+
+        .form-control {
+            height: 42px;
+        }
+
+        .input-group-addon {
+            color: #0E88EB;
+            border-radius: 0;
+            background-color: #EEF6F9;
+        }
+
+        .no-checked {
+            color: #AAA;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            float: left;
+            width: 140px;
+            height: 140px;
+            padding: 40px;
+            border: 1px solid #EEE;
+        }
+
+        .thumbnail.active,
+        .thumbnail:hover {
+            border: 1px solid #FF7900;
+        }
+
+        .caption .title {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-logo" href="index.html"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="identity-box-warp">
+            <form class="form-horizontal" style="margin: 0;">
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <div class="form-title">选择身份</div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="col-custom">
+                            <div type="netbar" class="thumbnail active">
+                                <img src="images/management/网吧.png" alt="...">
+                                <div class="caption">
+                                    <p class="title">网吧</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-custom">
+                            <div type="shop" class="thumbnail" style="float: right;">
+                                <img src="images/management/商户.png" alt="...">
+                                <div class="caption">
+                                    <p class="title">商户</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="padding-bottom: 30px;">
+                    <div class="col-sm-12" style="text-align: center;">
+                        <button id="next" type="button" class="btn btn-primary" style="padding: 6px 90px; height: 46px;">下一步</button>
+                        <div class="checkbox" style="text-align: center; margin-top: 20px;">
+                            <a class="" style="color: #AAA;" href="login.html">已有帐号？去登录</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/sb-admin.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.thumbnail').click(function() {
+                $(this).addClass('active');
+
+                $('.thumbnail').not(this).removeClass('active');
+            });
+
+            $('#next').click(function() {
+                var type = $('.active').attr('type')
+
+                window.location.href = 'auth-' + type + '.html';
+            });
+        });
+    </script>
+</body>
+</html>

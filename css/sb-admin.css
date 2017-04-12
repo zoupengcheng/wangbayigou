@@ -628,3 +628,35 @@ ul.alert-dropdown {
     line-height: 24px;
     margin-top: 8px;
 }
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+form .error-tips {
+    clear: both;
+    background-color: #FEF2F2;
+    border: 1px solid #FFCDCD;
+    color: #EB2326;
+    font-size: 12px;
+    text-align: left;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

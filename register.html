@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>网吧易购 -- 注册</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        body {
+            background-color: #F5F5F5;
+            margin-top: 0;
+        }
+
+        .container {
+            width: 970px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #FFF;
+            border-bottom: 2px solid #0F88EB;
+        }
+
+        .navbar-logo {
+            margin: 20px 20px 20px 0;
+        }
+
+        .register-box-warp {
+            width: 660px;
+            border-radius: 4px;
+            border: 1px solid #EEE;
+            background-color: #fff;
+            margin: 80px auto 20px;
+        }
+
+        .form-horizontal .form-group {
+            text-align: center;
+            margin: 0 0 15px 0;
+        }
+
+        .col-sm-12 {
+            width: 320px;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .form-title {
+            font-size: 30px;
+            color: #222222;
+            text-align: center;
+            margin: 50px 0 20px 0;
+            line-height: 30px;
+        }
+
+        .form-control {
+            height: 42px;
+        }
+
+        .input-group-addon {
+            color: #0E88EB;
+            border-radius: 0;
+            background-color: #EEF6F9;
+        }
+
+        .no-checked {
+            color: #AAA;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-logo" href="index.html"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="register-box-warp">
+            <form class="form-horizontal" style="margin: 0;">
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <div class="form-title">注册</div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="手机/邮箱">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="验证码" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">获取验证码</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="密码">
+                    </div>
+                </div>
+                <div class="form-group" style="padding-bottom: 30px;">
+                    <div class="col-sm-12" style="text-align: center;">
+                        <div class="checkbox" style="text-align: left; margin-bottom: 5px;">
+                            <label id="agreeBox" class="no-checked">
+                                <input id="agree" type="checkbox" onclick="checkProtocol()"> 我已阅读并接受 <a class="" href="#">《易购平台服务协议》</a>
+                            </label>
+                        </div>
+                        <button id="register" type="button" class="btn btn-primary" disabled="disabled" style="width: 100%; height: 46px;">完成</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel">
+        <div class="modal-dialog" role="document" style="width: 620px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="color: #02D928; margin-top: 20px; position: relative;">
+                        <img src="images/management/success.png" style="position: relative; top: -3px;"><span style="display: inline-block; margin-left: 20px;">注册成功</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div style="line-height: 30px; font-size: 18px;">
+                                    欢迎注册！你已经是网吧易购的一员了，你可以去登录浏览商品或继续认证，认证后您可以联系商户、让平台内所有的商户为您报价。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button id="login" type="button" class="btn btn-default" style="padding: 6px 40px; margin-top: 10px; margin-right: 30px;">登录</button>
+                                <button id="auth" type="button" class="btn btn-primary" style="padding: 6px 40px; margin-top: 10px;">认证</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/sb-admin.js"></script>
+
+    <script type="text/javascript">
+        function checkProtocol(e) {
+            if ($('#agree').is(':checked')) {
+                $('#agreeBox').removeClass('no-checked')
+                $('#register').removeAttr('disabled')
+            } else {
+                $('#agreeBox').addClass('no-checked')
+                $('#register').attr('disabled', 'disabled')
+            }
+        }
+
+        $(function() {
+            $('#agree').attr({'checked': false})
+
+            $('#register').click(function() {
+                $('#successModal').modal('show');
+            });
+
+            $('#login').click(function() {
+                window.location.href = 'login.html';
+            });
+
+            $('#auth').click(function() {
+                window.location.href = 'select-identity.html';
+            });
+        });
+    </script>
+</body>
+</html>

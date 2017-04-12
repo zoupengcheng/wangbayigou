@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>网吧易购 -- 商户认证</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        body {
+            background-color: #F5F5F5;
+            margin-top: 0;
+        }
+
+        .container {
+            width: 970px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #FFF;
+            border-bottom: 2px solid #0F88EB;
+        }
+
+        .navbar-logo {
+            margin: 20px 20px 20px 0;
+        }
+
+        .form-box-warp {
+            width: 800px;
+            border-radius: 4px;
+            border: 1px solid #EEE;
+            background-color: #fff;
+            margin: 80px auto 20px;
+        }
+
+        .form-horizontal .form-group {
+            text-align: center;
+            margin: 0 0 15px 0;
+        }
+
+        .col-sm-12 {
+            width: 360px;
+            margin: 0 auto;
+            float: none;
+        }
+
+        .form-title {
+            font-size: 30px;
+            color: #222222;
+            text-align: center;
+            margin: 50px 0 20px 0;
+            line-height: 30px;
+        }
+
+        .form-control {
+            height: 40px;
+        }
+
+        .input-group-addon {
+            color: #0E88EB;
+            border-radius: 0;
+            background-color: #EEF6F9;
+        }
+
+        .no-checked {
+            color: #AAA;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            float: left;
+            width: 140px;
+            height: 140px;
+            padding: 40px;
+            border: 1px solid #EEE;
+        }
+
+        .thumbnail.active,
+        .thumbnail:hover {
+            border: 1px solid #FF7900;
+        }
+
+        .caption .title {
+            font-size: 16px;
+        }
+
+        .control-label {
+            color: #666;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .col-sm-6 {
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-logo" href="index.html"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-box-warp">
+            <form class="form-horizontal" style="margin: 0;">
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <div class="form-title">商户认证</div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">商户名称</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="请务必与营业执照一致">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-4 control-label">商户地址</label>
+                    <div class="col-sm-6">
+                        <div style="margin-bottom: 15px;">
+                            <select class="form-control" id="type" style="display: inline-block; width: 100px; margin-right: 10px;">
+                                <option value="2017">省</option>
+                            </select>
+                            <select class="form-control" id="type" style="width: 100px; display: inline-block; margin-right: 10px;">
+                                <option value="01">市</option>
+                            </select>
+                            <select class="form-control" id="type" style="width: 90px; display: inline-block;">
+                                <option value="01">区</option>
+                            </select>
+                        </div>
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入商户详细地址">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">商户法人</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="请输入商户法人名字">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">商务QQ</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="网吧将通过此QQ与你联系">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">商户联系电话</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="网吧将通过此号码与你联系">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">商务负责人</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="名字">
+                    </div>
+                </div>
+                <div class="form-group" style="padding-bottom: 30px;">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button id="next" type="button" class="btn btn-primary" style="width: 100%; padding: 6px 90px; height: 40px; margin-top: 20px;">下一步</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        版权所有：杭州**********有限公司 Copyright2008-2014 ICP证：浙ICP备1103******号 经营许可证：浙B2-201****
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/sb-admin.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#next').click(function() {
+                window.location.href = 'auth-shop-b.html'
+            });
+        });
+    </script>
+</body>
+</html>

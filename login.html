@@ -34,6 +34,14 @@
             width: 970px;
         }
 
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .navbar-logo {
+            margin: 20px 20px 20px 0;
+        }
+
         .login-banner {
             position: relative;
             height: 600px;
@@ -43,25 +51,75 @@
             width: 100%;
             background-image: url("images/home/banner-.3.jpg")
         }
+
+        .login-box-warp {
+            position: absolute;
+            top: 120px;
+            right: 160px;
+            width: 350px;
+            background-color: #fff;
+        }
+
+        .form-horizontal .form-group {
+            margin: 0 0 15px 0;
+        }
+
+        .form-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222222;
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+            border-bottom: 1px solid #EA2840;
+        }
     </style>
 </head>
 <body>
     <!-- Fixed navbar -->
-    <nav class="navbar" style="margin-bottom: 0;">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-logo" href="index.html" style="margin: 10px 20px 10px 0"></a>
+                <a class="navbar-logo" href="index.html"></a>
             </div>
         </div>
     </nav>
 
     <div class="login-banner">
         <div class="container">
-            <!-- <div class="page-header">
-                <h1>Sticky footer with fixed navbar</h1>
-             </div>
-            <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
-            <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p> -->
+            <div class="login-box-warp">
+                <form class="form-horizontal" style="margin: 0;">
+                    <div class="form-group">
+                        <div class="form-title">账号登录</div>
+                    </div>
+                    <div class="col-sm-10 col-sm-offset-1" >
+                        <div class="error-tips">
+                            错误提示信息
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-1" >
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="手机">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <input type="password" class="form-control" id="inputEmail3" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-bottom: 30px; border-bottom: 1px solid #EA2840;">
+                        <div class="col-sm-10 col-sm-offset-1" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">完成</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-1" style="text-align: right;">
+                            <a style="color: #AAA; margin-right: 10px;" href="password.html">忘记密码</a>
+                            <a style="color: #AAA;" href="register.html">免费注册</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
