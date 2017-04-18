@@ -393,6 +393,64 @@ ul.alert-dropdown {
     color: #0E88EB;
 }
 
+.navbar-custom {
+
+}
+
+.navbar-custom .navbar-nav {
+    margin-top: 25px;
+    margin-left: 100px;
+}
+
+.navbar-custom .navbar-nav li a {
+    color: #222;
+    font-size: 16px;
+}
+
+.navbar-custom .navbar-nav li.active > a,
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:hover {
+    color: #0F88EB;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.navbar-custom .navbar-nav > li > .dropdown-menu {
+    padding: 0;
+}
+
+.navbar-custom .navbar-nav > li > .dropdown-menu a {
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 20px 0 15px;
+}
+
+.navbar-custom .navbar-nav > li > .dropdown-menu a:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #0F88EB;
+}
+
+.navbar-custom .navbar-form {
+    margin-top: 30px;
+    padding-right: 0;
+}
+
+.navbar-custom .navbar-form .form-control {
+    width: 220px;
+    height: 40px;
+    border: 2px solid #0F88EB;
+}
+
+.navbar-custom .navbar-form .btn {
+    color: #FFF;
+    width: 80px;
+    height: 40px;
+    border-radius: 0;
+    border-color: #0F88EB;
+    background-color: #0F88EB;
+}
+
 .panel-default {
     color: #666666;
     border-color: #EEE;
@@ -633,6 +691,7 @@ ul.alert-dropdown {
     position: relative;
     overflow: hidden;
 }
+
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
